@@ -5,7 +5,9 @@ import pandas as pd
 # Define path to our DB
 DB_FILE_PATH = "database.sqlite"
 
-# Used Try catch blocks for exception handling, Inside Try block,
+# Used Try catch blocks for exception handling,
+# Inside Try block all queries are placed and errors are inside exception and
+# close connection are inside finale block,
 try:
     # Initialize  connection to our sqlite DB
     conn = sqlite3.connect(DB_FILE_PATH)
@@ -43,6 +45,11 @@ try:
 
 except Exception as e:
     print(f"Exception found {e}")
+
+finally:
+    if conn:
+        conn.close()
+        print("Connection was closed")
 
 
 
