@@ -35,3 +35,5 @@ avg_time_to_last_engagement = merged_data['time_to_last'].mean()
 print("Lifecycle Averages as Follows")
 print(f"Average time to first engagement: {avg_time_to_first_engagement}")
 print(f"Average time to last engagement: {avg_time_to_last_engagement}")
+
+conn.close()
